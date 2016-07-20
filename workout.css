@@ -1,0 +1,13 @@
+html {
+	font-family: "Raleway";
+	margin: 0;
+}
+
+#header {
+	text-align: center;
+	font-size: 60px;
+}
+
+#header p {
+	line-height: 150px;
+}
