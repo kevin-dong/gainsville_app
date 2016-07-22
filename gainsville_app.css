@@ -1,0 +1,42 @@
+* {
+	border: 2px dotted;
+}
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+#header {
+	/*font-family: Garamond;*/
+	text-align: center;
+	font-size: 44px;
+}
+
+#body {
+	height: 100%;
+	width: 100%;
+}
+
+#daysPerWeek{
+	
+}
+
+#intensity{
+	
+}
+
+#generateWorkout {
+	
+}
+button,
+.button {
+  margin-bottom: 1rem; }
