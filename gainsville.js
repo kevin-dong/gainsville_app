@@ -9,6 +9,10 @@
       query = query.substring(1);
     }
 
+    else {
+      return 0;
+    }
+
     var data = query.split(','); 
     var temp = query.splice(0, 2);
     goal = temp[0];
@@ -17,22 +21,18 @@
   }
 
   function createTable() {
-    var body = document.getElementsByTagName('body')[0];
-    var tbl = document.createElement('table');
-    tbl.style.width = '100%';
-    tbl.setAttribute('border', '1');
-    var tbdy = document.createElement('tbody');
-    for (var i = 0; i < 3; i++) {
-      var tr = document.createElement('tr');
-      for (var j = 0; j < 2; j++) {
-            var td = document.createElement('td');
-            td.appendChild(document.createTextNode(" ");
-            tr.appendChild(td)
-      }
-      
-      tbdy.appendChild(tr);
+    var body = document.body,
+        tbl  = document.createElement('table');
+    tbl.style.width  = '100px';
+    tbl.style.border = '1px solid black';
+
+    for(var i = 0; i < parts.length; i++){
+        var tr = tbl.insertRow();
+        for(var j = 0; j < 3; j++){
+          var td = tr.insertCell();
+          td.appendChild(document.createTextNode('Cell'));
+          td.style.border = '1px solid black';
+        }
     }
-    
-    tbl.appendChild(tbdy);
-    body.appendChild(tbl)
-}
+    body.appendChild(tbl);
+  }
