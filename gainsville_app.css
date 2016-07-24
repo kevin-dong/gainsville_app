@@ -168,9 +168,33 @@ input[type="button"].button-primary:focus {
 
 .body {
 	height: 88%;
-  left: 10%;
-  position: absolute;
-  display: inline-block;
+	left: 10%;
+	position: absolute;
+	display: inline-block;
+}
+
+.opt {
+	border: none;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	font-size: 24px;
+	background-color: #C3D7DF;
+	border-radius: 7.5px;
+}
+
+button,
+.button {
+  margin-bottom: 1rem;
+  padding: 15px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+	background-color: #6991AC;
 }
 
 #options {
@@ -179,28 +203,26 @@ input[type="button"].button-primary:focus {
 	position: relative;
 }
 
-#daysPerWeek {
+#options div {
 	position: absolute;
-	top: 250px;
 	right: 100px;
 	width: 300px;
 }
 
+#daysPerWeek {
+	top: 250px;
+}
+
 #goals{
-	position: absolute;
 	top: 350px;
-	right: 100px;
-	width: 300px;
-	border: none;
-	background-color: #ff5c33;
-	border-radius: 7.5px;
-	color: white;
-	text-decoration: none;
-	font-size: 24px;
 }
 
 #goals p {
 	margin: 15px 0px 0px 0px;
+}
+
+#generateWorkout {
+	top: 500px;
 }
 
 .noselect {
@@ -211,33 +233,6 @@ input[type="button"].button-primary:focus {
 	-ms-user-select: none;       /* Internet Explorer/Edge */
 	user-select: none;           /* Non-prefixed version, currently
                                   not supported by any browser */
-}
-
-#generateWorkout {
-	position: absolute;
-	top: 500px;
-	right: 100px;
-	width: 300px;
-}
-
-button,
-.button {
-  margin-bottom: 1rem;
-  background-color: #FF5C33;
-  border: none;
-  border-radius: 7.5px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 24px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-button:hover,
-.button:hover {
-	background-color: #FF471A;
 }
 
 input[type=range] {
@@ -254,7 +249,7 @@ input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
   animate: 0.2s;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #ff471a;
+  background: #6991AC;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -270,7 +265,7 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -14px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #ff471a;
+  background: #6991AC;
 }
 input[type=range]::-moz-range-track {
   width: 100%;
@@ -278,7 +273,7 @@ input[type=range]::-moz-range-track {
   cursor: pointer;
   animate: 0.2s;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #ff471a;
+  background: #6991AC;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -308,7 +303,7 @@ input[type=range]::-ms-fill-lower {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type=range]::-ms-fill-upper {
-  background: #ff471a;
+  background: #6991AC;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -323,8 +318,8 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #ff471a;
+  background: #6991AC;
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: #ff471a;
+  background: #6991AC;
 }
