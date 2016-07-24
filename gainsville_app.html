@@ -2,29 +2,50 @@
 	<head>
 		<title> Gainsville - For Your Workout Needs </title>
 		<link rel="stylesheet" type="text/css" href="gainsville_app.css"/>
+		<script>
+		function highlight(btn) {
+			if (document.getElementById(btn).style.backgroundColor == "cyan") {
+				document.getElementById(btn).style.backgroundColor = "white";
+			} else{
+				document.getElementById(btn).style.backgroundColor = "cyan";
+			}
+		}
+		</script>
 	</head>
 
 	<body>
-		<div id="header"> 
+		<div id="header">
 			<p>
 				<strong> GAINSVILLE </strong>
 			</p>
 		</div>
-		
-		<div id="body">
+
+		<div class=	"body">
 			<img src="http://anatomycharts.us/wp-content/uploads/2015/11/human-muscle-anatomy-images-human-muscle-anatomy.jpg"/>
+			<input type="button" id = "bicep" class="muscle_button" value="Bicep" onclick="highlight('bicep')"/>
+			<input type="button" id = "tricep" class="muscle_button" value="Tricep" onclick="highlight('tricep')"/>
+			<input type="button" id = "forearm" class="muscle_button" value="Forearm" onclick="highlight('forearm')"/>
+			<input type="button" id = "deltoid" class="muscle_button" value="Deltoid" onclick="highlight('deltoid')"/>
+			<input type="button" id = "chest" class="muscle_button" value="Chest" onclick="highlight('chest')"/>
+			<input type="button" id = "calves" class="muscle_button" value="Calves" onclick="highlight('calves')"/>
+			<input type="button" id = "quadricep" class="muscle_button" value="Quadricep" onclick="highlight('quadricep')"/>
+			<input type="button" id = "hamstring" class="muscle_button" value="Hamstring" onclick="highlight('hamstring')"/>
+			<input type="button" id = "lower" class="muscle_button" value="Lower back" onclick="highlight('lower')"/>
+			<input type="button" id = "upper" class="muscle_button" value="Upper back" onclick="highlight('upper')"/>
+			<input type="button" id = "abdomen" class="muscle_button" value="Abdomen" onclick="highlight('abdomen')"/>
+			<input type="button" id = "trapezius" class="muscle_button" value="Trapezius" onclick="highlight('trapezius')"/>
 		</div>
-		
+
 		<div id="options">
 			<div id="daysPerWeek">
 				<button> Days to Workout </button>
 			</div>
-			
+
 			<div id="goals">
 				<p> Workout Goals </p>
 				<input type="range">
 			</div>
-			
+
 			<div id="generateWorkout">
 				<form action="workout.html">
 					<input class="button" type="submit" value="Give Me a Workout!">

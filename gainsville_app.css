@@ -20,7 +20,7 @@ body {
 #header {
 	text-align: center;
 	font-size: 60px;
-	height: 10%;
+	height: 12%;
 	display: block;
 	position: relative;
 }
@@ -35,9 +35,92 @@ img {
 	max-width: 100%;
 }
 
-#body {
-	height: 89%;
-	display: inline-block;
+.muscle_button{
+  background-color: white;
+  border: solid;
+  width: 5.5em;
+  height: 3em;
+}
+
+#bicep{
+  position: absolute;
+  top: 25%;
+  left: 0%;
+}
+
+#tricep{
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+
+#forearm{
+  position: absolute;
+  top: 35%;
+  left: 0%;
+}
+
+#deltoid{
+  position: absolute;
+  top: 15%;
+  left: 0%;
+}
+
+#chest{
+  position: absolute;
+  top: 15%;
+  left:40%;
+}
+
+#calves{
+  position: absolute;
+  top: 75%;
+  left:50%;
+}
+
+#quadricep{
+  position: absolute;
+  top: 60%;
+  left: 0%;
+}
+
+#hamstring {
+  position: absolute;
+  top: 60%;
+  left:50%;
+}
+
+#lower{
+  position: absolute;
+  top: 35%;
+  right: 0%;
+  width: 6em;
+}
+
+#trapezius{
+  position: absolute;
+  top: 15%;
+  right: 0%;
+}
+
+#abdomen{
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
+
+#upper{
+  position: absolute;
+  top: 25%;
+  right: 0%;
+  width: 6em;
+}
+
+.body {
+	height: 88%;
+  left: 10%;
+  position: absolute;
+  display: inline-block;
 }
 
 #options {
