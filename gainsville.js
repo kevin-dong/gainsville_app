@@ -26,7 +26,7 @@
     tbl.style.width  = '100px';
     tbl.style.border = '1px solid black';
 
-    for(var i = 0; i < parts.length; i++){
+    for(var i = 0; i < 3; i++){
         var tr = tbl.insertRow();
         for(var j = 0; j < 3; j++){
           var td = tr.insertCell();
