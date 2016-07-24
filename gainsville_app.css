@@ -131,14 +131,14 @@ img {
 
 #daysPerWeek {
 	position: absolute;
-	top: 300px;
+	top: 250px;
 	right: 100px;
 	width: 300px;
 }
 
 #goals{
 	position: absolute;
-	top: 400px;
+	top: 350px;
 	right: 100px;
 	width: 300px;
 	border: none;
@@ -153,9 +153,19 @@ img {
 	margin: 15px 0px 0px 0px;
 }
 
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
 #generateWorkout {
 	position: absolute;
-	top: 550px;
+	top: 500px;
 	right: 100px;
 	width: 300px;
 }
