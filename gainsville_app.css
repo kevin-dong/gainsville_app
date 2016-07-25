@@ -40,7 +40,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  height: 30px;
+  height: 38px;
   padding: 0 10px;
   color: #555;
   text-align: center;
