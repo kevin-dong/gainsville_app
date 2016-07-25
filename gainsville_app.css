@@ -40,11 +40,11 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
+  height: 30px;
+  padding: 0 10px;
   color: #555;
   text-align: center;
-  font-size: 11px;
+  font-size: 8px;
   font-weight: 600;
   line-height: 38px;
   letter-spacing: .1rem;
@@ -89,7 +89,7 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
   background-color: #1EAEDB;
-  border-color: #1EAEDB; 
+  border-color: #1EAEDB;
 }
 
 #bicep{
@@ -137,14 +137,13 @@ input[type="button"].button-primary:focus {
 #hamstring {
   position: absolute;
   top: 60%;
-  left:50%;
+  left:49%;
 }
 
 #lower{
   position: absolute;
   top: 35%;
   right: 0%;
-  width: 6em;
 }
 
 #trapezius{
@@ -163,7 +162,6 @@ input[type="button"].button-primary:focus {
   position: absolute;
   top: 25%;
   right: 0%;
-  width: 6em;
 }
 
 .body {
@@ -184,6 +182,10 @@ input[type="button"].button-primary:focus {
 	border-radius: 7.5px;
 }
 
+.buttonopt {
+  width: 40em;
+  fon-size: 20;
+}
 button,
 .button {
   margin-bottom: 1rem;
