@@ -3,13 +3,13 @@
 		<title> Gainsville - For Your Workout Needs </title>
 		<link rel="stylesheet" type="text/css" href="gainsville_app.css"/>
 		<script>
-		function highlight(btn) {
-			if (document.getElementById(btn).style.backgroundColor == "cyan") {
-				document.getElementById(btn).style.backgroundColor = "white";
-			} else{
-				document.getElementById(btn).style.backgroundColor = "cyan";
+			function highlight(btn) {
+				if (document.getElementById(btn).style.backgroundColor == "rgb(195, 215, 223)") {
+					document.getElementById(btn).style.backgroundColor = "";
+				} else{
+					document.getElementById(btn).style.backgroundColor = "rgb(195, 215, 223)";
+				}
 			}
-		}
 		</script>
 	</head>
 
@@ -22,33 +22,44 @@
 
 		<div class=	"body">
 			<img src="http://anatomycharts.us/wp-content/uploads/2015/11/human-muscle-anatomy-images-human-muscle-anatomy.jpg"/>
-			<input type="button" id = "bicep" class="muscle_button" value="Bicep" onclick="highlight('bicep')"/>
-			<input type="button" id = "tricep" class="muscle_button" value="Tricep" onclick="highlight('tricep')"/>
-			<input type="button" id = "forearm" class="muscle_button" value="Forearm" onclick="highlight('forearm')"/>
-			<input type="button" id = "deltoid" class="muscle_button" value="Deltoid" onclick="highlight('deltoid')"/>
-			<input type="button" id = "chest" class="muscle_button" value="Chest" onclick="highlight('chest')"/>
-			<input type="button" id = "calves" class="muscle_button" value="Calves" onclick="highlight('calves')"/>
-			<input type="button" id = "quadricep" class="muscle_button" value="Quadricep" onclick="highlight('quadricep')"/>
-			<input type="button" id = "hamstring" class="muscle_button" value="Hamstring" onclick="highlight('hamstring')"/>
-			<input type="button" id = "lower" class="muscle_button" value="Lower back" onclick="highlight('lower')"/>
-			<input type="button" id = "upper" class="muscle_button" value="Upper back" onclick="highlight('upper')"/>
-			<input type="button" id = "abdomen" class="muscle_button" value="Abdomen" onclick="highlight('abdomen')"/>
-			<input type="button" id = "trapezius" class="muscle_button" value="Trapezius" onclick="highlight('trapezius')"/>
+			<input type="button" id = "bicep" class="muscle_button" value="bicep" onclick="highlight('bicep')"/>
+			<input type="button" id = "tricep" class="muscle_button" value="tricep" onclick="highlight('tricep')"/>
+			<input type="button" id = "forearm" class="muscle_button" value="forearm" onclick="highlight('forearm')"/>
+			<input type="button" id = "deltoid" class="muscle_button" value="deltoid" onclick="highlight('deltoid')"/>
+			<input type="button" id = "chest" class="muscle_button" value="chest" onclick="highlight('chest')"/>
+			<input type="button" id = "calves" class="muscle_button" value="calves" onclick="highlight('calves')"/>
+			<input type="button" id = "quadricep" class="muscle_button" value="quadricep" onclick="highlight('quadricep')"/>
+			<input type="button" id = "hamstring" class="muscle_button" value="hamstring" onclick="highlight('hamstring')"/>
+			<input type="button" id = "lower" class="muscle_button" value="lower back" onclick="highlight('lower')"/>
+			<input type="button" id = "upper" class="muscle_button" value="upper back" onclick="highlight('upper')"/>
+			<input type="button" id = "abdomen" class="muscle_button" value="abdomen" onclick="highlight('abdomen')"/>
+			<input type="button" id = "trapezius" class="muscle_button" value="trapezius" onclick="highlight('trapezius')"/>
 		</div>
 
 		<div id="options">
-			<div id="daysPerWeek">
-				<button class="opt"> Days to Workout </button>
+			<div id="daysPerWeek" class="opt noselect">
+				<h3> Days to Workout </h3>
+				<input type="checkbox" id="sun" class="regular-checkbox" /><label for="sun"> S </label>
+				<input type="checkbox" id="mon" class="regular-checkbox" /><label for="mon"> M </label>
+				<input type="checkbox" id="tue" class="regular-checkbox" /><label for="tue"> T </label>
+				<input type="checkbox" id="wed" class="regular-checkbox" /><label for="wed"> W </label>
+				<input type="checkbox" id="thu" class="regular-checkbox" /><label for="thu"> TH </label>
+				<input type="checkbox" id="fri" class="regular-checkbox" /><label for="fri"> F </label>
+				<input type="checkbox" id="sat" class="regular-checkbox" /><label for="sat"> S </label>
 			</div>
 
-			<div id="goals" class="opt">
-				<p class="noselect"> Workout Goals </p>
-				<input type="range">
+			<div id="goals" class="opt noselect">
+				<p> Workout Goals </p>
+				<form>
+					<input type="radio" name="goals" value="strength"> Strength <br>
+					<input type="radio" name="goals" value="tone"> Tone <br>
+					<input type="radio" name="goals" value="both"> Both <br>
+				</form>
 			</div>
 
 			<div id="generateWorkout">
 				<form action="workout.html">
-					<input class="button opt" type="submit" value="Give Me a Workout!">
+					<input class="button opt" type="submit" value="Give Me a Workout!"/>
 				</form>
 			</div>
 		</div>
