@@ -2,30 +2,49 @@
 	<head>
 		<title> Gainsville - For Your Workout Needs </title>
 		<link rel="stylesheet" type="text/css" href="gainsville_app.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script>
-			var data = new Array();
-			function highlight(btn) {
-				if (document.getElementById(btn).style.backgroundColor == "rgb(195, 215, 223)") {
-					document.getElementById(btn).style.backgroundColor = "";
-					var i = data.indexOf(document.getElementById(btn).getAttribute("id"));
-					data.splice(i, 1);
-				} else{
-					document.getElementById(btn).style.backgroundColor = "rgb(195, 215, 223)";
-					data.push(document.getElementById(btn).getAttribute("id"));
-				}
-			}
-
-			function sendData(){
-				// Initialize packed or we get the word 'undefined'
-				var packed = "";
-				for (i = 0; (i < data.length); i++) {
-					if (i > 0) {
-					packed += ",";
+			$(document).ready(function(){
+				var data = new Array();
+				$(".muscle_button").click(function() {
+					if ($(this).css("background-color") == "rgb(195, 215, 223)") {
+						$(this).css("background-color", "");
+						var i = data.indexOf($(this).attr("id"));
+						data.splice(i, 1);
+					} else{
+						$(this).css("background-color", "rgb(195, 215, 223)");
+						data.push($(this).attr("id"));
 					}
-					packed += escape(data[i]);
-				}
-				window.location = "workout.html?" + packed;
-			}
+				});
+
+				$("input[type=submit]").click(function() {
+					// Initialize packed or we get the word 'undefined'
+					var packed = "";
+					if(data.length <= 0){
+						alert("You must select at least one muscle to work out!");
+						return false;
+					}
+					
+					for (i = 0; (i < data.length); i++) {
+						if (i > 0)
+							packed += ",";
+						packed += escape(data[i]);
+					}
+					
+					$(".regular-checkbox:checked").each(function(){
+						packed += "," + $(this).val();
+						});
+					
+					var radioChecked = $("input[name=goals]:checked").val();
+					if(radioChecked == undefined){
+						alert("You must select what your goals are!");
+						return false;
+					}
+					
+					packed += "," + radioChecked;
+					window.location = "workout.html?" + packed;
+				});
+			});
 		</script>
 	</head>
 
@@ -55,13 +74,13 @@
 		<div id="options">
 			<div id="daysPerWeek" class="opt noselect">
 				<h3> Days to Workout </h3>
-				<input type="checkbox" id="sun" class="regular-checkbox" /><label for="sun"> S </label>
-				<input type="checkbox" id="mon" class="regular-checkbox" /><label for="mon"> M </label>
-				<input type="checkbox" id="tue" class="regular-checkbox" /><label for="tue"> T </label>
-				<input type="checkbox" id="wed" class="regular-checkbox" /><label for="wed"> W </label>
-				<input type="checkbox" id="thu" class="regular-checkbox" /><label for="thu"> TH </label>
-				<input type="checkbox" id="fri" class="regular-checkbox" /><label for="fri"> F </label>
-				<input type="checkbox" id="sat" class="regular-checkbox" /><label for="sat"> S </label>
+				<input type="checkbox" id="sun" class="regular-checkbox" value="sun"/><label for="sun"> S </label>
+				<input type="checkbox" id="mon" class="regular-checkbox" value="mon"/><label for="mon"> M </label>
+				<input type="checkbox" id="tue" class="regular-checkbox" value="tue"/><label for="tue"> T </label>
+				<input type="checkbox" id="wed" class="regular-checkbox" value="wed"/><label for="wed"> W </label>
+				<input type="checkbox" id="thu" class="regular-checkbox" value="thu"/><label for="thu"> TH </label>
+				<input type="checkbox" id="fri" class="regular-checkbox" value="fri"/><label for="fri"> F </label>
+				<input type="checkbox" id="sat" class="regular-checkbox" value="sat"/><label for="sat"> S </label>
 			</div>
 
 			<div id="goals" class="opt noselect">
