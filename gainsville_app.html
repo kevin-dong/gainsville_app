@@ -3,12 +3,28 @@
 		<title> Gainsville - For Your Workout Needs </title>
 		<link rel="stylesheet" type="text/css" href="gainsville_app.css"/>
 		<script>
+			var data = new Array();
 			function highlight(btn) {
 				if (document.getElementById(btn).style.backgroundColor == "rgb(195, 215, 223)") {
 					document.getElementById(btn).style.backgroundColor = "";
+					var i = data.indexOf(document.getElementById(btn).getAttribute("id"));
+					data.splice(i, 1);
 				} else{
 					document.getElementById(btn).style.backgroundColor = "rgb(195, 215, 223)";
+					data.push(document.getElementById(btn).getAttribute("id"));
 				}
+			}
+
+			function sendData(){
+				// Initialize packed or we get the word 'undefined'
+				var packed = "";
+				for (i = 0; (i < data.length); i++) {
+					if (i > 0) {
+					packed += ",";
+					}
+					packed += escape(data[i]);
+				}
+				window.location = "workout.html?" + packed;
 			}
 		</script>
 	</head>
@@ -58,7 +74,7 @@
 			</div>
 
 			<div id="generateWorkout">
-				<form action="workout.html">
+				<form action = "javascript:sendData();">
 					<input class="button opt" type="submit" value="Give Me a Workout!"/>
 				</form>
 			</div>
