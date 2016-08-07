@@ -19,9 +19,10 @@
 
   function arrayFill() { // populate 2D array
     var tempArr = [];
-    var counter = 0;
-    while(counter < parts.length) {
-      switch(parts[counter]) { // populate array based on part
+    var counter = 1;
+    tempArr[0] = ["Parts", "Exercise", "Sets x Reps"];
+    while(counter < parts.length + 1) {
+      switch(parts[counter - 1]) { // populate array based on part
         case "deltoid":
           if(goal === "strength") {
             tempArr[counter] = ["Deltoid", "Overhead Press", "3 x 5"];
@@ -133,7 +134,7 @@
         tbl  = document.createElement('table');
     tbl.className = "u-full-width";
 
-    for(var i = 0; i < parts.length; i++) {
+    for(var i = 0; i < parts.length + 1; i++) {
         var tr = tbl.insertRow();
         for(var j = 0; j < col; j++) {
           var td = tr.insertCell();
@@ -141,7 +142,10 @@
         }
     }
     body.appendChild(tbl);
-    for(var x = 0; x < parts.length; x++) {
+    tbl.rows[0].cells[0].style.fontWeight = 'bold';
+    tbl.rows[0].cells[1].style.fontWeight = 'bold';
+    tbl.rows[0].cells[2].style.fontWeight = 'bold';
+    for(var x = 0; x < parts.length + 1; x++) {
       for(var y = 0; y < col; y++) {
         tbl.rows[x].cells[y].innerHTML = partsArray[x][y];
       }
