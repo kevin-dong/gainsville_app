@@ -13,21 +13,18 @@
       return 0;
     }
 
-    var data = query.split(',');
-    var temp = query.splice(0, 2);
-    goal = temp[0];
-    days = temp[1];
-    parts = query.slice();
+    parts = query.split(',');
+    goal = "strength";
+    createTable(arrayFill());
   }
 
   function arrayFill() { // populate 2D array
-    parts[0] = "bicep";
     var tempArr = [];
     var counter = 0;
-    while(counter < parts) {
+    while(counter < parts.length) {
       switch(parts[counter]) { // populate array based on part
         case "deltoid":
-          if(goal == "strength") {
+          if(goal === "strength") {
             tempArr[counter] = ["Deltoid", "Overhead Press", "3 x 5"];
           }
 
@@ -36,7 +33,7 @@
           }
           break;
         case "bicep":
-          if(goal == "strength") {
+          if(goal === "strength") {
             tempArr[counter] = ["Bicep", "Barbell Bicep Curl", "3 x 8"];
           }
 
@@ -48,7 +45,7 @@
           tempArr[counter] = ["Forearm", "Dumbbell Wrist Curl", "3 x 12"];
           break;
         case "quadricep":
-          if(goal == "hypertrophy") {
+          if(goal === "hypertrophy") {
             tempArr[counter] = ["Quadricep", "Leg Extension", "3 x 12"];
           }
 
@@ -57,7 +54,7 @@
           }
           break;
         case "chest":
-          if(goal == "hypertrophy") {
+          if(goal === "hypertrophy") {
             tempArr[counter] = ["Chest", "Cable Fly", "3 x 12"];
           }
 
@@ -66,7 +63,7 @@
           }
           break;
         case "tricep":
-          if(goal == "strength") {
+          if(goal === "strength") {
             tempArr[counter] = ["Tricep", "Close Grip Bench Press", "3 x 8"];
           }
 
@@ -78,7 +75,7 @@
           tempArr[counter] = ["Abdomen", "Plank", "3 x As long as possible"];
           break;
         case "hamstring":
-          if(goal == "strength") {
+          if(goal === "strength") {
             tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 8"];
           }
 
@@ -90,7 +87,7 @@
           tempArr[counter] = ["Calves", "Standing Calf Raise", "3 x 15"];
           break;
         case "trapezius":
-          if(goal == "hypertrophy") {
+          if(goal === "hypertrophy") {
             tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 12"];
           }
 
@@ -103,7 +100,7 @@
           }
           break;
         case "upperback":
-          if(goal == "hypertrophy") {
+          if(goal === "hypertrophy") {
             tempArr[counter] = ["Upper Back", "Cable Row", "3 x 12"];
           }
 
@@ -112,7 +109,7 @@
           }
           break;
         case "lowerback":
-          if(goal == "hypertrophy") {
+          if(goal === "hypertrophy") {
             tempArr[counter] = ["Lower Back", "Hyperextension", "3 x 12"];
           }
 
