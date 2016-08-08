@@ -13,14 +13,16 @@
     }
 
     parts = query.split(',');
-    goal = "strength";
+    var temp = parts.splice(parts.length - 2, parts.length);
+    days = temp[0];
+    goal = temp[1];
     createTable(arrayFill());
   }
 
   function arrayFill() { // populate 2D array
     var tempArr = [];
     var counter = 1;
-    tempArr[0] = ["Parts", "Exercise", "Sets x Reps"];
+    tempArr[0] = ["Muscles", "Exercise", "Sets x Reps"];
     while(counter < parts.length + 1) {
       switch(parts[counter - 1]) { // populate array based on part
         case "deltoid":
