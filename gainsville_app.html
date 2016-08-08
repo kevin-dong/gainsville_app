@@ -29,6 +29,11 @@
 						packed += escape(data[i]) + ",";
 					
 					var count = 0;
+					if($(".regular-checkbox:checked").length <= 0){
+						alert("You must select which days of the week to work out!");
+						return false;
+					}
+					
 					$(".regular-checkbox:checked").each(function(){
 						packed += $(this).val();
 						count++;
@@ -86,9 +91,9 @@
 			<div id="goals" class="opt noselect">
 				<p> Workout Goals </p>
 				<form>
-					<input type="radio" name="goals" value="strength"> Strength <br>
-					<input type="radio" name="goals" value="tone"> Tone <br>
-					<input type="radio" name="goals" value="both"> Both <br>
+					<input type="radio" name="goals" value="str"> Strength <br>
+					<input type="radio" name="goals" value="aes"> Aesthetics <br>
+					<input type="radio" name="goals" value="bth"> Both <br>
 				</form>
 			</div>
 
