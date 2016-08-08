@@ -25,15 +25,15 @@
 						return false;
 					}
 					
-					for (i = 0; (i < data.length); i++) {
-						if (i > 0)
-							packed += ",";
-						packed += escape(data[i]);
-					}
+					for (var i = 0; i < data.length; i++)
+						packed += escape(data[i]) + ",";
 					
+					var count = 0;
 					$(".regular-checkbox:checked").each(function(){
-						packed += "," + $(this).val();
+						packed += $(this).val();
+						count++;
 						});
+					packed += count;
 					
 					var radioChecked = $("input[name=goals]:checked").val();
 					if(radioChecked == undefined){
