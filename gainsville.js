@@ -1,4 +1,4 @@
- var goal, days, parts; // global variables that affect workout
+ var goal, days, numDays, parts; // global variables that affect workout
 
   window.onload = function() { // pull information from query string
     var query = window.location.search;
@@ -16,113 +16,245 @@
     var temp = parts.splice(parts.length - 2, parts.length);
     days = temp[0];
     goal = temp[1];
-    createTable(arrayFill());
+    numDays = parseInt(days, 10);
+    for(var i = 0; i < numDays; i++) {
+      createTable(arrayFill((numDays % 2) + 1)); // fill tables with alternating day 1 and day 2
+    }
   }
 
-  function arrayFill() { // populate 2D array
+  function arrayFill(day) { // populate 2D array
     var tempArr = [];
     var counter = 1;
     tempArr[0] = ["Muscles", "Exercise", "Sets x Reps"];
     while(counter < parts.length + 1) {
-      switch(parts[counter - 1]) { // populate array based on part
-        case "deltoid":
-          if(goal === "str") {
-            tempArr[counter] = ["Deltoid", "Overhead Press", "3 x 5"];
-          }
+      if(day == 0) { // only 1 day of workout per week
+        switch(parts[counter - 1]) { // populate array based on part
+          case "deltoid":
+            if(goal === "str") {
+              tempArr[counter] = ["Deltoid", "Overhead Press", "3 x 5"];
+            }
 
-          else {
-            tempArr[counter] = ["Deltoid", "Dumbbell Lateral Raise", "3 x 12"];
-          }
-          break;
-        case "bicep":
-          if(goal === "str") {
-            tempArr[counter] = ["Bicep", "Barbell Bicep Curl", "3 x 8"];
-          }
-
-          else {
-            tempArr[counter] = ["Bicep", "Incline Dumbbell Bicep Curl", "3 x 12"];
-          }
-          break;
-        case "forearm":
-          tempArr[counter] = ["Forearm", "Dumbbell Wrist Curl", "3 x 12"];
-          break;
-        case "quadricep":
-          if(goal === "aes") {
-            tempArr[counter] = ["Quadricep", "Leg Extension", "3 x 12"];
-          }
-
-          else {
-            tempArr[counter] = ["Quadricep", "Barbell Squat", "3 x 5"];
-          }
-          break;
-        case "chest":
-          if(goal === "aes") {
-            tempArr[counter] = ["Chest", "Cable Fly", "3 x 12"];
-          }
-
-          else {
-            tempArr[counter] = ["Chest", "Bench Press", "3 x 5"];
-          }
-          break;
-        case "tricep":
-          if(goal === "str") {
-            tempArr[counter] = ["Tricep", "Close Grip Bench Press", "3 x 8"];
-          }
-
-          else {
-            tempArr[counter] = ["Tricep", "Cable Tricep Extension", "3 x 12"];
-          }
-          break;
-        case "abdomen":
-          tempArr[counter] = ["Abdomen", "Plank", "3 x As long as possible"];
-          break;
-        case "hamstring":
-          if(goal === "str") {
-            tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 8"];
-          }
-
-          else {
-            tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 12"];
-          }
-          break;
-        case "calves":
-          tempArr[counter] = ["Calves", "Standing Calf Raise", "3 x 15"];
-          break;
-        case "trapezius":
-          if(goal === "aes") {
-            tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 12"];
-          }
-
-          else if(parts.indexOf("lowerback") != -1) {
+            else {
+              tempArr[counter] = ["Deltoid", "Dumbbell Lateral Raise", "3 x 12"];
+            }
             break;
-          }
+          case "bicep":
+            if(goal === "str") {
+              tempArr[counter] = ["Bicep", "Barbell Bicep Curl", "3 x 8"];
+            }
 
-          else {
-            tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 8"];
-          }
-          break;
-        case "upper":
-          if(goal === "aes") {
-            tempArr[counter] = ["Upper Back", "Cable Row", "3 x 12"];
-          }
+            else {
+              tempArr[counter] = ["Bicep", "Incline Dumbbell Bicep Curl", "3 x 12"];
+            }
+            break;
+          case "forearm":
+            tempArr[counter] = ["Forearm", "Dumbbell Wrist Curl", "3 x 12"];
+            break;
+          case "quadricep":
+            if(goal === "aes") {
+              tempArr[counter] = ["Quadricep", "Leg Extension", "3 x 12"];
+            }
 
-          else {
-            tempArr[counter] = ["Upper Back", "Barbell Row", "3 x 5"];
-          }
-          break;
-        case "lower":
-          if(goal === "aes") {
-            tempArr[counter] = ["Lower Back", "Hyperextension", "3 x 12"];
-          }
+            else {
+              tempArr[counter] = ["Quadricep", "Barbell Squat", "3 x 5"];
+            }
+            break;
+          case "chest":
+            if(goal === "aes") {
+              tempArr[counter] = ["Chest", "Cable Fly", "3 x 12"];
+            }
 
-          else if(parts.indexOf("trapezius") != -1) { // include traps in back
-            tempArr[counter] = ["Lower Back, Trapezius", "Deadlift", "3 x 5"];
-          }
+            else {
+              tempArr[counter] = ["Chest", "Bench Press", "3 x 5"];
+            }
+            break;
+          case "tricep":
+            if(goal === "str") {
+              tempArr[counter] = ["Tricep", "Close Grip Bench Press", "3 x 8"];
+            }
 
-          else {
-            tempArr[counter] = ["Lower Back", "Deadlift", "3 x 5"];
-          }
-          break;
+            else {
+              tempArr[counter] = ["Tricep", "Cable Tricep Extension", "3 x 12"];
+            }
+            break;
+          case "abdomen":
+            tempArr[counter] = ["Abdomen", "Plank", "3 x As long as possible"];
+            break;
+          case "hamstring":
+            if(goal === "str") {
+              tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 8"];
+            }
+
+            else {
+              tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 12"];
+            }
+            break;
+          case "calves":
+            tempArr[counter] = ["Calves", "Standing Calf Raise", "3 x 15"];
+            break;
+          case "trapezius":
+            if(goal === "aes") {
+              tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 12"];
+            }
+
+            else if(parts.indexOf("lowerback") != -1) {
+              break;
+            }
+
+            else {
+              tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 8"];
+            }
+            break;
+          case "upper":
+            if(goal === "aes") {
+              tempArr[counter] = ["Upper Back", "Cable Row", "3 x 12"];
+            }
+
+            else {
+              tempArr[counter] = ["Upper Back", "Barbell Row", "3 x 5"];
+            }
+            break;
+          case "lower":
+            if(goal === "aes") {
+              tempArr[counter] = ["Lower Back", "Hyperextension", "3 x 12"];
+            }
+
+            else if(parts.indexOf("trapezius") != -1) { // include traps in back
+              tempArr[counter] = ["Lower Back, Trapezius", "Deadlift", "3 x 5"];
+            }
+
+            else {
+              tempArr[counter] = ["Lower Back", "Deadlift", "3 x 5"];
+            }
+            break;
+        }
+      } 
+
+      else if(day == 1) { // day 1 of workout
+        switch(parts[counter - 1]) { // populate array based on part
+          case "quadricep":
+            if(goal === "aes") {
+              tempArr[counter] = ["Quadricep", "Leg Extension", "3 x 12"];
+            }
+
+            else {
+              tempArr[counter] = ["Quadricep", "Barbell Squat", "3 x 5"];
+            }
+            break;
+          case "deltoid":
+            if(goal === "str") {
+              tempArr[counter] = ["Deltoid", "Overhead Press", "3 x 5"];
+            }
+
+            else {
+              tempArr[counter] = ["Deltoid", "Dumbbell Lateral Raise", "3 x 12"];
+            }
+            break;
+          case "upper":
+            if(goal === "aes") {
+              tempArr[counter] = ["Upper Back", "Cable Row", "3 x 12"];
+            }
+
+            else {
+              tempArr[counter] = ["Upper Back", "Barbell Row", "3 x 5"];
+            }
+            break;
+          case "bicep":
+            if(goal === "str") {
+              tempArr[counter] = ["Bicep", "Barbell Bicep Curl", "3 x 8"];
+            }
+
+            else {
+              tempArr[counter] = ["Bicep", "Incline Dumbbell Bicep Curl", "3 x 12"];
+            }
+            break;
+          case "forearm":
+            tempArr[counter] = ["Forearm", "Dumbbell Wrist Curl", "3 x 12"];
+            break;
+          case "abdomen":
+            tempArr[counter] = ["Abdomen", "Plank", "3 x As long as possible"];
+            break;
+          case "hamstring":
+            if(goal === "str") {
+              tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 8"];
+            }
+
+            else {
+              tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 12"];
+            }
+            break;
+          case "calves":
+            tempArr[counter] = ["Calves", "Standing Calf Raise", "3 x 15"];
+            break;
+        }
+      }
+
+      else { // day 2 of workout
+        switch(parts[counter - 1]) { // populate array based on part
+          case "chest":
+            if(goal === "aes") {
+              tempArr[counter] = ["Chest", "Cable Fly", "3 x 12"];
+            }
+
+            else {
+              tempArr[counter] = ["Chest", "Bench Press", "3 x 5"];
+            }
+            break;
+          case "lower":
+            if(goal === "aes") {
+              tempArr[counter] = ["Lower Back", "Hyperextension", "3 x 12"];
+            }
+
+            else if(parts.indexOf("trapezius") != -1) { // include traps in back
+              tempArr[counter] = ["Lower Back, Trapezius", "Deadlift", "3 x 5"];
+            }
+
+            else {
+              tempArr[counter] = ["Lower Back", "Deadlift", "3 x 5"];
+            }
+            break;
+          case "bicep":
+            if(goal === "str") {
+              tempArr[counter] = ["Bicep", "Dumbbell Bicep Curl", "3 x 8"];
+            }
+
+            else {
+              tempArr[counter] = ["Bicep", "Incline Dumbbell Bicep Curl", "3 x 12"];
+            }
+            break;
+          case "forearm":
+            tempArr[counter] = ["Forearm", "Dumbbell Wrist Curl", "3 x 12"];
+            break;
+
+          case "tricep":
+            if(goal === "str") {
+              tempArr[counter] = ["Tricep", "Close Grip Bench Press", "3 x 8"];
+            }
+
+            else {
+              tempArr[counter] = ["Tricep", "Cable Tricep Extension", "3 x 12"];
+            }
+            break;
+          case "abdomen":
+            tempArr[counter] = ["Abdomen", "Plank", "3 x As long as possible"];
+            break;
+          case "calves":
+            tempArr[counter] = ["Calves", "Seated Calf Raise", "3 x 15"];
+            break;
+          case "trapezius":
+            if(goal === "aes") {
+              tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 12"];
+            }
+
+            else if(parts.indexOf("lowerback") != -1) {
+              break;
+            }
+
+            else {
+              tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 8"];
+            }
+            break;
+        }
       }
       counter++; // move on to next part
     }
