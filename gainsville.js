@@ -26,7 +26,7 @@
     while(counter < parts.length + 1) {
       switch(parts[counter - 1]) { // populate array based on part
         case "deltoid":
-          if(goal === "strength") {
+          if(goal === "str") {
             tempArr[counter] = ["Deltoid", "Overhead Press", "3 x 5"];
           }
 
@@ -35,7 +35,7 @@
           }
           break;
         case "bicep":
-          if(goal === "strength") {
+          if(goal === "str") {
             tempArr[counter] = ["Bicep", "Barbell Bicep Curl", "3 x 8"];
           }
 
@@ -47,7 +47,7 @@
           tempArr[counter] = ["Forearm", "Dumbbell Wrist Curl", "3 x 12"];
           break;
         case "quadricep":
-          if(goal === "hypertrophy") {
+          if(goal === "aes") {
             tempArr[counter] = ["Quadricep", "Leg Extension", "3 x 12"];
           }
 
@@ -56,7 +56,7 @@
           }
           break;
         case "chest":
-          if(goal === "hypertrophy") {
+          if(goal === "aes") {
             tempArr[counter] = ["Chest", "Cable Fly", "3 x 12"];
           }
 
@@ -65,7 +65,7 @@
           }
           break;
         case "tricep":
-          if(goal === "strength") {
+          if(goal === "str") {
             tempArr[counter] = ["Tricep", "Close Grip Bench Press", "3 x 8"];
           }
 
@@ -77,7 +77,7 @@
           tempArr[counter] = ["Abdomen", "Plank", "3 x As long as possible"];
           break;
         case "hamstring":
-          if(goal === "strength") {
+          if(goal === "str") {
             tempArr[counter] = ["Hamstring", "Leg Curl", "3 x 8"];
           }
 
@@ -89,7 +89,7 @@
           tempArr[counter] = ["Calves", "Standing Calf Raise", "3 x 15"];
           break;
         case "trapezius":
-          if(goal === "hypertrophy") {
+          if(goal === "aes") {
             tempArr[counter] = ["Trapezius", "Barbell Shrug", "3 x 12"];
           }
 
@@ -102,7 +102,7 @@
           }
           break;
         case "upper":
-          if(goal === "hypertrophy") {
+          if(goal === "aes") {
             tempArr[counter] = ["Upper Back", "Cable Row", "3 x 12"];
           }
 
@@ -111,7 +111,7 @@
           }
           break;
         case "lower":
-          if(goal === "hypertrophy") {
+          if(goal === "aes") {
             tempArr[counter] = ["Lower Back", "Hyperextension", "3 x 12"];
           }
 
