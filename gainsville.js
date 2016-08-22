@@ -135,21 +135,23 @@
     var body = document.body,
         tbl  = document.createElement('table');
     tbl.className = "u-full-width";
-
-    for(var i = 0; i < parts.length + 1; i++) {
+    for(var i = 0; i <= parts.length + 1; i++) {
         var tr = tbl.insertRow();
         for(var j = 0; j < col; j++) {
+          if (i == 0 && j == 2) {
+            td.appendChild(document.createTextNode('Day of Week'));
+          }
           var td = tr.insertCell();
-          td.appendChild(document.createTextNode('Cell'));
+          td.appendChild(document.createTextNode(''));
         }
     }
     body.appendChild(tbl);
-    tbl.rows[0].cells[0].style.fontWeight = 'bold';
-    tbl.rows[0].cells[1].style.fontWeight = 'bold';
-    tbl.rows[0].cells[2].style.fontWeight = 'bold';
-    for(var x = 0; x < parts.length + 1; x++) {
+    tbl.rows[1].cells[0].style.fontWeight = 'bold';
+    tbl.rows[1].cells[1].style.fontWeight = 'bold';
+    tbl.rows[1].cells[2].style.fontWeight = 'bold';
+    for(var x = 1; x <= parts.length + 1; x++) {
       for(var y = 0; y < col; y++) {
-        tbl.rows[x].cells[y].innerHTML = partsArray[x][y];
+        tbl.rows[x].cells[y].innerHTML = partsArray[x-1][y];
       }
     }
   }
