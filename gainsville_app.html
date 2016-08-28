@@ -3,6 +3,7 @@
 		<title> Gainsville - For Your Workout Needs </title>
 		<link rel="icon" href="http://cdn.shopify.com/s/files/1/0185/5092/products/persons-0123.png?v=1369543551"/>
 		<link rel="stylesheet" type="text/css" href="gainsville_app.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Candal|Poiret+One" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
@@ -62,7 +63,7 @@
 		</div>
 
 		<div class=	"body">
-			<img src="https://s7.postimg.org/46kvx5sgr/human_muscle_anatomy_images_human_muscle_anatomy.jpg"/>
+			<img src="http://www.sohanscrapmetal.com/wp-content/uploads/2015/12/muscle-anatomy-human-anatomy-muscles-of-the-body-human-anatomy-diagram-muscle-anatomy-chart.jpg"/>
 			<input type="button" id = "bicep" class="muscle_button" value="bicep" onclick="highlight('bicep')"/>
 			<input type="button" id = "tricep" class="muscle_button" value="tricep" onclick="highlight('tricep')"/>
 			<input type="button" id = "forearm" class="muscle_button" value="forearm" onclick="highlight('forearm')"/>
@@ -77,9 +78,10 @@
 			<input type="button" id = "trapezius" class="muscle_button" value="trapezius" onclick="highlight('trapezius')"/>
 		</div>
 
+		
 		<div id="options">
 			<div id="daysPerWeek" class="opt noselect">
-				<h3> Days to Workout </h3>
+				<h3> DAYS TO WORKOUT </h3>
 				<input type="checkbox" id="sun" class="regular-checkbox" value="sun"/><label for="sun"> S </label>
 				<input type="checkbox" id="mon" class="regular-checkbox" value="mon"/><label for="mon"> M </label>
 				<input type="checkbox" id="tue" class="regular-checkbox" value="tue"/><label for="tue"> T </label>
@@ -87,22 +89,20 @@
 				<input type="checkbox" id="thu" class="regular-checkbox" value="thu"/><label for="thu"> TH </label>
 				<input type="checkbox" id="fri" class="regular-checkbox" value="fri"/><label for="fri"> F </label>
 				<input type="checkbox" id="sat" class="regular-checkbox" value="sat"/><label for="sat"> S </label>
-			</div>
-
-			<div id="goals" class="opt noselect">
-				<h3> Workout Goals </h3>
+				
+				<h3> WORKOUT GOALS </h3>
 				<form>
-					<input type="radio" name="goals" value="str"> Strength <br>
-					<input type="radio" name="goals" value="aes"> Aesthetics <br>
-					<input type="radio" name="goals" value="bth"> Both <br>
+					<label><input type="radio" name="goals" value="str"> Strength </label>
+					<label><input type="radio" name="goals" value="aes"> Aesthetics </label>
+					<label><input type="radio" name="goals" value="bth"> Both </label>
 				</form>
 			</div>
-
+			
 			<div id="generateWorkout">
 				<form action = "javascript:sendData();">
-					<input class="opt" type="submit" value="Give Me a Workout!"/>
+					<input class="opt" type="submit" value="GIVE ME A WORKOUT!"/>
 				</form>
-			</div>
+			</div>	
 		</div>
 	</body>
 </html>
