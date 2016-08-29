@@ -7,21 +7,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				var data = new Array();
 				$(".muscle_button").click(function() {
-					if ($(this).css("background-color") == "rgb(195, 215, 223)") {
-						$(this).css("background-color", "");
-						var i = data.indexOf($(this).attr("id"));
-						data.splice(i, 1);
-					} else{
-						$(this).css("background-color", "rgb(195, 215, 223)");
-						data.push($(this).attr("id"));
-					}
+					$(".muscle[value=" + $(this).val() + "]").toggleClass("highlight");
 				});
 
 				$("input[type=submit]").click(function() {
 					// Initialize packed or we get the word 'undefined'
 					var packed = "";
+					var data = new Array();
+					$(".highlight").each(function(){
+						data.push($(this).attr("id"));
+					});
+					
 					if(data.length <= 0){
 						alert("You must select at least one muscle to work out!");
 						return false;
@@ -63,19 +60,41 @@
 		</div>
 
 		<div class=	"body">
-			<img src="http://www.sohanscrapmetal.com/wp-content/uploads/2015/12/muscle-anatomy-human-anatomy-muscles-of-the-body-human-anatomy-diagram-muscle-anatomy-chart.jpg"/>
-			<input type="button" id = "bicep" class="muscle_button" value="bicep" onclick="highlight('bicep')"/>
-			<input type="button" id = "tricep" class="muscle_button" value="tricep" onclick="highlight('tricep')"/>
-			<input type="button" id = "forearm" class="muscle_button" value="forearm" onclick="highlight('forearm')"/>
-			<input type="button" id = "deltoid" class="muscle_button" value="deltoid" onclick="highlight('deltoid')"/>
-			<input type="button" id = "chest" class="muscle_button" value="chest" onclick="highlight('chest')"/>
-			<input type="button" id = "calves" class="muscle_button" value="calves" onclick="highlight('calves')"/>
-			<input type="button" id = "quadricep" class="muscle_button" value="quadricep" onclick="highlight('quadricep')"/>
-			<input type="button" id = "hamstring" class="muscle_button" value="hamstring" onclick="highlight('hamstring')"/>
+			<img src="muscle_images/human_body_anatomy.png"/>
+			
+			<img id="deltoid" class="muscle" value="deltoid" src="muscle_images/deltoid_combined.gif"/>
+			<input type="button" id="deltoidButton" class="muscle_button" value="deltoid"/>
+			
+			<img id="forearm" class="muscle" value="forearm" src="muscle_images/forearm_combined.gif"/>
+			<input type="button" id="forearmButton" class="muscle_button" value="forearm"/>
+			
+			<img id="bicep" class="muscle" value="bicep" src="muscle_images/bicep_combined.gif"/>
+			<input type="button" id="bicepButton" class="muscle_button" value="bicep"/>
+			
+			<img id="quadricep" class="muscle" value="quadricep" src="muscle_images/quadriceps_combined.gif"/>
+			<input type="button" id="quadricepButton" class="muscle_button" value="quadricep"/>
+			
+			<img id="trapezius" class="muscle" value="trapezius" src="muscle_images/trapezius.gif"/>
+			<input type="button" id="trapeziusButton" class="muscle_button" value="trapezius"/>
+			
+			<img id="chest" class="muscle" value="chest" src="muscle_images/chest.gif"/>
+			<input type="button" id="chestButton" class="muscle_button" value="chest"/>
+			
+			<img id="abdomen" class="muscle" value="abdomen" src="muscle_images/abdomen.gif"/>
+			<input type="button" id="abdomenButton" class="muscle_button" value="abdomen"/>
+			
+			<img id="tricep" class="muscle" value="tricep" src="muscle_images/triceps_combined.gif"/>
+			<input type="button" id="tricepButton" class="muscle_button" value="tricep"/>
+			
+			<img id="calves" class="muscle" value="calves" src="muscle_images/calves_combined.gif"/>
+			<input type="button" id="calvesButton" class="muscle_button" value="calves"/>
+			
+			<img id="hamstring" class="muscle" value="hamstring" src="muscle_images/hamstrings_combined.gif"/>
+			<input type="button" id="hamstringButton" class="muscle_button" value="hamstring"/>
+			
 			<input type="button" id = "lower" class="muscle_button" value="lower back" onclick="highlight('lower')"/>
 			<input type="button" id = "upper" class="muscle_button" value="upper back" onclick="highlight('upper')"/>
-			<input type="button" id = "abdomen" class="muscle_button" value="abdomen" onclick="highlight('abdomen')"/>
-			<input type="button" id = "trapezius" class="muscle_button" value="trapezius" onclick="highlight('trapezius')"/>
+			
 		</div>
 
 		

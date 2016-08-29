@@ -15,7 +15,7 @@ html {
 	position: relative;
 }
 #header p {
-	line-height: 175px;
+	line-height: 100px;
 	font-family: 'Candal', sans-serif;
 	font-size: 75px;
 	text-align: center;
@@ -91,52 +91,108 @@ div div label {
 	cursor: pointer;
 }
 
-.muscle_button {
+.muscle, .muscle_button {
 	position: absolute;
+	display: block;
+}
+.muscle:focus, .muscle_button:focus {
+	outline: 0;
 }
 
-#deltoid{
-  top: 12%;
-  left: 31%; }
-#bicep{
-  top: 20.5%;
-  left: 34%;
-  height: 120px;
+.highlight {
+	/*-webkit-filter: grayscale(100%) saturate(3);
+	filter: grayscale(100%) saturate(3);*/
+	-webkit-filter: hue-rotate(220deg);
+	filter: hue-rotate(220deg);
 }
-#tricep{
+
+#deltoid {
+  top: 16.2%;
+  left: 34.95%;
+  height: 86.5px; }
+#deltoidButton {
+	top: 17%;
+	left: 30.4%; }
+
+#bicep {
+  top: 22%;
+  left: 34.8%;
+  height: 102px; }
+#bicepButton {
+  top: 25.5%;
+  left: 31%; }
+	
+#forearm {
+  top: 30.5%;
+  left: 34.4%;
+  height: 85.75px; }
+#forearmButton {
+  top: 34%;
+  left: 29.3%; }
+ 
+#chest {
+  top: 18.2%;
+  left: 36.3%;
+  height: 81px; }
+#chestButton {
+	top: 17%;
+	left: 46.5%;
+}
+
+#abdomen {
+  top: 27.4%;
+  left: 38.2%;
+  height: 85px; }
+#abdomenButton {
+	top: 30%;
+	left: 47%;
+}
+
+#trapezius {
+  top: 9.25%;
+  left: 55.07%;
+  height: 130px; }
+#trapeziusButton {
+	top: 17%;
+	left: 64.25%; }
+  
+#quadricep {
+	top: 44.5%;
+	left: 36.5%;
+	height: 189px; }
+#quadricepButton{
+  top: 60%;
+  left: 31%; }
+
+#tricep {
+	top: 21%;
+	left: 52.6%;
+	height: 110px; }
+#tricepButton {
   top: 25%;
   left: 64.5%; }
-#forearm{
-  top: 37.5%;
-  left: 29.25%; }
-#calves{
+
+#calves {
+	top: 68.22%;
+	left: 55.34%;
+	height: 180px; }
+#calvesButton {
   top: 75%;
   left: 62.25%; }
-#chest{
-  top: 15%;
-  left:40%; }
-#quadricep{
-  top: 60%;
-  left: 31%; }
+
+
 #hamstring {
-  position: absolute;
+  top: 52.5%;
+  left: 55.05%;
+  height: 160px; }
+#hamstringButton {
   top: 60%;
-  left: 62.5%; }
+  left: 62.65%; }
+  
 #lower{
   position: absolute;
   top: 35%;
   right: 0%; }
-
-#trapezius{
-  top: 12%;
-  left: 48.5%;
-}
-
-#abdomen{
-  position: absolute;
-  top: 35%;
-  left: 43%;
-}
 
 #upper{
   position: absolute;
@@ -150,7 +206,7 @@ div div label {
 	text-align: center;
 	text-decoration: none;
 	font-size: 24px;
-	background-color: #2980b9; /* BELIZE HOLE */
+	background-color: #3F61AE; /* BELIZE HOLE #2980b9*/
 	border-radius: 7.5px;
 }
 
