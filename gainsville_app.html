@@ -8,7 +8,8 @@
 		<script>
 			$(document).ready(function(){
 				$(".muscle_button").click(function() {
-					$(".muscle[value=" + $(this).val() + "]").toggleClass("highlight");
+					$(this).toggleClass("button_highlight");
+					$(".muscle[value=" + $(this).val() + "]").toggleClass("muscle_highlight");
 				});
 
 				$("input[type=submit]").click(function() {
@@ -52,7 +53,7 @@
 		</script>
 	</head>
 
-	<body>
+	<body class="noselect">
 		<div id="header">
 			<p>
 				<strong> GAINSVILLE </strong>
@@ -62,44 +63,55 @@
 		<div class=	"body">
 			<img src="muscle_images/human_body_anatomy.png"/>
 			
-			<img id="deltoid" class="muscle" value="deltoid" src="muscle_images/deltoid_combined.gif"/>
-			<input type="button" id="deltoidButton" class="muscle_button" value="deltoid"/>
+			<img id="deltoid" class="muscle" value="deltoids" src="muscle_images/deltoid_combined.gif"/>
+			<input type="button" id="dlt_btn" class="muscle_button" value="deltoids"/>
 			
-			<img id="forearm" class="muscle" value="forearm" src="muscle_images/forearm_combined.gif"/>
-			<input type="button" id="forearmButton" class="muscle_button" value="forearm"/>
+			<img id="forearm" class="muscle" value="forearms" src="muscle_images/forearm_combined.gif"/>
+			<input type="button" id="for_btn" class="muscle_button" value="forearms"/>
 			
-			<img id="bicep" class="muscle" value="bicep" src="muscle_images/bicep_combined.gif"/>
-			<input type="button" id="bicepButton" class="muscle_button" value="bicep"/>
+			<img id="bicep" class="muscle" value="biceps" src="muscle_images/bicep_combined.gif"/>
+			<input type="button" id="bcp_btn" class="muscle_button" value="biceps"/>
 			
-			<img id="quadricep" class="muscle" value="quadricep" src="muscle_images/quadriceps_combined.gif"/>
-			<input type="button" id="quadricepButton" class="muscle_button" value="quadricep"/>
+			<img id="quadricep" class="muscle" value="quadriceps" src="muscle_images/quadriceps_combined.gif"/>
+			<input type="button" id="qdp_btn" class="muscle_button" value="quadriceps"/>
 			
 			<img id="trapezius" class="muscle" value="trapezius" src="muscle_images/trapezius.gif"/>
-			<input type="button" id="trapeziusButton" class="muscle_button" value="trapezius"/>
+			<input type="button" id="tps_btn" class="muscle_button" value="trapezius"/>
 			
 			<img id="chest" class="muscle" value="chest" src="muscle_images/chest.gif"/>
-			<input type="button" id="chestButton" class="muscle_button" value="chest"/>
+			<input type="button" id="chst_btn" class="muscle_button" value="chest"/>
 			
 			<img id="abdomen" class="muscle" value="abdomen" src="muscle_images/abdomen.gif"/>
-			<input type="button" id="abdomenButton" class="muscle_button" value="abdomen"/>
+			<input type="button" id="abd_btn" class="muscle_button" value="abdomen"/>
 			
-			<img id="tricep" class="muscle" value="tricep" src="muscle_images/triceps_combined.gif"/>
-			<input type="button" id="tricepButton" class="muscle_button" value="tricep"/>
+			<img id="tricep" class="muscle" value="triceps" src="muscle_images/triceps_combined.gif"/>
+			<input type="button" id="tcp_btn" class="muscle_button" value="triceps"/>
 			
 			<img id="calves" class="muscle" value="calves" src="muscle_images/calves_combined.gif"/>
-			<input type="button" id="calvesButton" class="muscle_button" value="calves"/>
+			<input type="button" id="clv_btn" class="muscle_button" value="calves"/>
 			
-			<img id="hamstring" class="muscle" value="hamstring" src="muscle_images/hamstrings_combined.gif"/>
-			<input type="button" id="hamstringButton" class="muscle_button" value="hamstring"/>
+			<img id="hamstring" class="muscle" value="hamstrings" src="muscle_images/hamstrings_combined.gif"/>
+			<input type="button" id="hsg_btn" class="muscle_button" value="hamstrings"/>
 			
-			<input type="button" id = "lower" class="muscle_button" value="lower back" onclick="highlight('lower')"/>
-			<input type="button" id = "upper" class="muscle_button" value="upper back" onclick="highlight('upper')"/>
+			<img id="lower" class="muscle" value="lower" src="muscle_images/lower_back.gif"/>
+			<input type="button" id="lb_btn" class="muscle_button" value="lower"/>
 			
+			<img id="upper" class="muscle" value="upper" src="muscle_images/upper_back_combined.gif"/>
+			<input type="button" id="ub_btn" class="muscle_button" value="upper"/>
+			
+			<img id="lats" class="muscle" value="lats" src="muscle_images/latissimus_dorsi.gif"/>
+			<input type="button" id="lat_btn" class="muscle_button" value="lats"/>
+			
+			<img id="glutes" class="muscle" value="glutes" src="muscle_images/gluteus_maximus.gif"/>
+			<input type="button" id="glt_btn" class="muscle_button" value="glutes"/>
+			
+			<img id="obliques" class="muscle" value="obliques" src="muscle_images/obliques_combined.gif"/>
+			<input type="button" id="obl_btn" class="muscle_button" value="obliques"/>
 		</div>
 
 		
 		<div id="options">
-			<div id="daysPerWeek" class="opt noselect">
+			<div id="daysPerWeek" class="opt">
 				<h3> DAYS TO WORKOUT </h3>
 				<input type="checkbox" id="sun" class="regular-checkbox" value="sun"/><label for="sun"> S </label>
 				<input type="checkbox" id="mon" class="regular-checkbox" value="mon"/><label for="mon"> M </label>
