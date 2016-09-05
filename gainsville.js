@@ -10,8 +10,7 @@ var day_dict = {
 };
  window.onload = function() { // pull information from query string
    var query = window.location.search;
-   // Skip the leading ?, which should always be there,
-   // but be careful anyway
+   // Skip the leading ?
    if (query.substring(0, 1) == '?') {
      query = query.substring(1);
    }
@@ -32,7 +31,8 @@ var day_dict = {
    else {
      var d = 3;
      for(var i = 0; i < numDays; i++) {
-       createTable(arrayFill((i % 2) + 1), days.substring(d - 3, d)); // fill tables with alternating day 1 and day 2
+       // fill tables with alternating day 1 and day 2
+       createTable(arrayFill((i % 2) + 1), days.substring(d - 3, d));
        d += 3;
      }
    }
@@ -42,7 +42,7 @@ var day_dict = {
    var tempArr = [];
    var counter = 1;
    var arrIndex = 1; // temp array index
-   tempArr[0] = ["Muscles", "Exercise", "Sets x Reps"];
+   tempArr[0] = ["Muscle", "Exercise", "Sets x Reps"];
    if(day == 0) {
      while(counter < parts.length + 1) { // only 1 day of workout per week
        switch(parts[counter - 1]) { // populate array based on part
@@ -70,6 +70,10 @@ var day_dict = {
          case "quadricep":
            if(goal === "aes") {
              tempArr[counter] = ["Quadricep", "Leg Extension", "3 x 12"];
+           }
+
+           else if(parts.indexOf("glutes") != -1) { // include glutes in quads
+             tempArr[counter] = ["Quadricep, Glutes", "Barbell Squat", "3 x 5"];
            }
 
            else {
@@ -144,6 +148,22 @@ var day_dict = {
              tempArr[counter] = ["Lower Back", "Deadlift", "3 x 5"];
            }
            break;
+         case "glutes":
+           if(goal === "aes") {
+             tempArr[counter] = ["Glutes", "Barbell Hip Thrust", "3 x 12"];
+           } 
+
+           else if(parts.indexOf("quadricep") != -1) {
+             break;
+           } 
+
+           else {
+            tempArr[counter] = ["Glutes", "Barbell Hip Thrust", "3 x 8"];
+           }
+           break;
+         case "obliques":
+           tempArr[counter] = ["Obliques", "Side Bends", "3 x 10"];
+           break;
        }
 
        counter++; // move on to next part
@@ -156,6 +176,10 @@ var day_dict = {
          case "quadricep":
            if(goal === "aes") {
              tempArr[arrIndex++] = ["Quadricep", "Leg Extension", "3 x 12"];
+           }
+
+           else if(parts.indexOf("glutes") != -1) { // include glutes in quads
+             tempArr[arrIndex++] = ["Quadricep, Glutes", "Barbell Squat", "3 x 5"];
            }
 
            else {
@@ -204,8 +228,24 @@ var day_dict = {
              tempArr[arrIndex++] = ["Hamstring", "Leg Curl", "3 x 12"];
            }
            break;
+         case "glutes":
+           if(goal === "aes") {
+             tempArr[arrIndex++] = ["Glutes", "Barbell Hip Thrust", "3 x 12"];
+           } 
+
+           else if(parts.indexOf("quadricep") != -1) {
+             break;
+           } 
+
+           else {
+            tempArr[arrIndex++] = ["Glutes", "Barbell Hip Thrust", "3 x 8"];
+           }
+           break;
          case "calves":
            tempArr[arrIndex++] = ["Calves", "Standing Calf Raise", "3 x 15"];
+           break;
+         case "obliques":
+           tempArr[arrIndex++] = ["Obliques", "Side Bends", "3 x 10"];
            break;
        }
 
@@ -279,6 +319,9 @@ var day_dict = {
              tempArr[arrIndex++] = ["Trapezius", "Barbell Shrug", "3 x 8"];
            }
            break;
+         case "obliques":
+           tempArr[arrIndex++] = ["Obliques", "Side Bends", "3 x 10"];
+           break;
        }
 
        counter++; // move on to next part
@@ -288,7 +331,7 @@ var day_dict = {
    return tempArr;
  }
 
- function createTable(partsArray, daysOfWeek) {
+ function createTable(partsArray, daysOfWeek) { // creates table
    var col = 3; // number of columns
    var body = document.body,
        tbl  = document.createElement('table');
@@ -313,4 +356,6 @@ var day_dict = {
        tbl.rows[x].cells[y].innerHTML = partsArray[x][y];
      }
    }
+
+   tbl.style.marginBottom = "50px"; // spaces between tables
  }
