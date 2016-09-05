@@ -6,10 +6,9 @@ html {
 }
 
 #header {
-	height: 16.5%;
+	height: 12.5%;
 	display: block;
 	position: relative;
-	border-bottom: 1.75px solid black;
 	margin-bottom: 1%;
 }
 #header p {
@@ -18,16 +17,6 @@ html {
 	font-size: 75px;
 	text-align: center;
 	letter-spacing: 4px;
-}
-
-.body {
-	position: relative;
-	/*border: 2px dotted;*/
-}
-.body img {
-	height: 80%;
-	display: block;
-	margin: 0 auto;
 }
 
 /* Removed input[type="reset"], .button, and button for clarity */
@@ -50,14 +39,9 @@ input[type="button"] {
   border-radius: 4px;
   border: 1px solid #bbb;
   box-sizing: border-box; }
-input[type="button"]:hover,
-.button_highlight {
+input[type="button"]:hover {
   color: #333;
-  -moz-box-shadow:    inset 0 0 10px #3F61AE;
-  -webkit-box-shadow: inset 0 0 10px #3F61AE;
-  box-shadow:         inset 0 0 10px #3F61AE;
-  border-color: #3D8BC5;
-  outline: 0; }
+  border-color: #ccc; }
 input[type="button"]:focus {
   outline: 0; }
 input[type="button"]:active {
@@ -72,135 +56,76 @@ input[type=radio],
 div div label {
 	cursor: pointer; }
 
-.muscle {
-	position: absolute;
-	display: block;
-}
+.button_highlight {
+  -moz-box-shadow: inset 0 0 10px #3F61AE;
+  -webkit-box-shadow: inset 0 0 10px #3F61AE;
+  box-shadow: inset 0 0 10px #3F61AE;
+  border-color: #3D8BC5;
+  outline: 0; }
 
 .muscle_highlight {
-	/*-webkit-filter: grayscale(100%) saturate(3);
-	filter: grayscale(100%) saturate(3);*/
 	-webkit-filter: hue-rotate(220deg);
-	filter: hue-rotate(220deg);
-}
+	filter: hue-rotate(220deg); }
 
-#deltoid {
-  top: 16.35%;
-  left: 34.95%;
-  height: 11.35%; }
+.body {
+	position: relative;
+	height: 80%; }
+
+.body img {
+	height: 100%;
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1; }
+
+.body muscle_button {
+	z-index: 1; }
+
+#bgImg {
+  z-index: -2; }
 #dlt_btn {
   top: 17%;
   left: 30%; }
-
-#bicep {
-  top: 22%;
-  left: 34.8%;
-  height: 13.33%; }
 #bcp_btn {
   top: 25.5%;
   left: 30.5%; }
-	
-#forearm {
-  top: 30.5%;
-  left: 34.4%;
-  height: 11.15%; }
 #for_btn {
   top: 34%;
   left: 29%; }
- 
-#chest {
-  top: 18.2%;
-  left: 36.3%;
-  height: 10.6%; }
 #chst_btn {
   top: 19%;
   left: 46%; }
-
-#abdomen {
-  top: 27.4%;
-  left: 38.2%;
-  height: 11.1%; }
 #abd_btn {
-	top: 38.5%;
-	left: 47.1%; }
-
-#trapezius {
-  top: 9.45%;
-  left: 55.25%;
-  height: 23.5%; }
+  top: 38.5%;
+  left: 47.1%; }
 #tps_btn {
   top: 9%;
   left: 51%; }
-  
-#quadricep {
-  top: 44.5%;
-  left: 36.5%;
-  height: 24.68%; }
 #qdp_btn {
   top: 60%;
   left: 30.5%; }
-
-#tricep {
-  top: 21%;
-  left: 52.6%;
-  height: 14.36%; }
 #tcp_btn {
   top: 25.35%;
   left: 48.2%; }
-
-#calves {
-  top: 68.22%;
-  left: 55.34%;
-  height: 23.51%; }
 #clv_btn {
   top: 75%;
   left: 62.25%; }
-
-#hamstring {
-  top: 52.5%;
-  left: 55.05%;
-  height: 20.89%; }
 #hsg_btn {
   top: 60%;
   left: 62.65%; }
-  
-#lower {
-  top: 33.7%;
-  left: 56.165%;
-  height: 10.1%; }
 #lb_btn {
   top: 37.5%;
   left: 65%; }
-
-#upper {
-  top: 18.5%;
-  left: 54.5%;
-  height: 8%; }
 #ub_btn {
   top: 20%;
   left: 64.5%; }
-
-#lats {
-  top: 25.5%;
-  left: 54.8%;
-  height: 16%;
-}
 #lat_btn {
   top: 31%;
   left: 65%; }
-
-#glutes {
-	top: 40.7%;
-	left: 55%;
-	height: 13.3%; }
 #glt_btn {
-	top: 47%;
-	left: 66.3%; }
-
-#obliques {
-  top: 28.5%;
-  left: 36.9%;
-  height: 10.15%; }
+  top: 47%;
+  left: 66.3%; }
 #obl_btn {
   top: 32%;
   left: 47%; }
@@ -247,15 +172,15 @@ div div label {
 
 #generateWorkout {
 	top: 70%;
-	right: 6.25%;
+	right: 5.5%;
 }
 #generateWorkout form input[type=submit] {
-	padding: 17.5px 0px;
-	width: 250px;
-	font-family: 'Lato', sans-serif;
+  padding: 17.5px 0px;
+  width: 225px;
+  font-family: 'Lato', sans-serif;
   font-weight: bolder;
-	white-space: normal;
-	line-height: 100%;
+  white-space: normal;
+  line-height: 100%;
 }
 #generateWorkout form input[type=submit]:focus {
 	outline: 0;
