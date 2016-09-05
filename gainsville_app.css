@@ -10,9 +10,11 @@ html {
 }
 
 #header {
-	height: 18%;
+	height: 16.5%;
 	display: block;
 	position: relative;
+	border-bottom: 1.75px solid black;
+	margin-bottom: 1%;
 }
 #header p {
 	line-height: 100px;
@@ -42,6 +44,7 @@ input[type="button"] {
   text-align: center;
   font-size: 10px;
   font-weight: 700;
+  cursor: pointer;
   line-height: 38px;
   letter-spacing: .1rem;
   text-transform: uppercase;
@@ -60,20 +63,22 @@ input[type="button"]:hover,
   border-color: #3D8BC5;
   outline: 0; }
 input[type="button"]:focus {
-	outline: 0; }
+  outline: 0; }
+input[type="button"]:active {
+  color: #555;
+  border-color: #bbb;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 input[type=submit],
 input[type=checkbox],
 input[type=radio],
-input[type=button],
 div div label {
 	cursor: pointer; }
 
 .muscle {
 	position: absolute;
 	display: block;
-}
-.muscle:focus {
-	outline: 0;
 }
 
 .muscle_highlight {
@@ -204,15 +209,14 @@ div div label {
   top: 32%;
   left: 47%; }
 
-  .opt {
-	border: none;
-	color: black;
-	text-align: center;
-	text-decoration: none;
-	font-size: 24px;
-	background-color: #3F61AE; /* BELIZE HOLE #2980b9*/
-	border-radius: 7.5px;
-}
+.opt {
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  background-color: #3F61AE; /* BELIZE HOLE #2980b9*/
+  border-radius: 7.5px; }
 
 #options div {
 	position: absolute;
