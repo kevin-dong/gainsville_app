@@ -164,6 +164,14 @@ var day_dict = {
          case "obliques":
            tempArr[counter] = ["Obliques", "Side Bends", "3 x 10"];
            break;
+         case "lats":
+           if(goal === "aes") {
+            tempArr[counter] = ["Lats", "Lat Pulldown", "3 x 12"];
+           }
+
+           else {
+            tempArr[counter] = ["Lats", "Pull-Ups", "3 x 8"];
+           }
        }
 
        counter++; // move on to next part
@@ -247,6 +255,14 @@ var day_dict = {
          case "obliques":
            tempArr[arrIndex++] = ["Obliques", "Side Bends", "3 x 10"];
            break;
+         case "lats":
+           if(goal === "aes") {
+            tempArr[arrIndex++] = ["Lats", "Lat Pulldown", "3 x 12"];
+           }
+
+           else {
+            tempArr[arrIndex++] = ["Lats", "Pull-Ups", "3 x 8"];
+           }
        }
 
        counter++; // move on to next part
